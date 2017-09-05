@@ -1,0 +1,1231 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Python</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    /* Color Palette Based on Monokai
+
+          body : #191919, #fafafa
+    blockquote : #272822, #eeeeee
+         links : #66d9ef
+           pre : #272822, #75715e, #dddddd, #f92672,
+                 #a6e22e, #66d9ef, #bf79db
+*/
+
+/* Theme styles */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fafafa;
+  background-color: #191919;
+  font-size: 100%;
+}
+
+/* custom slide styles */
+
+/* fade.jpg, wireballblack.png, space.png, snow2.jpg, pinstripe_rain.png, orion.jpg, nodes.jpg */
+
+#slide-1 {
+  background: #222 url(wireball.png) center center no-repeat;
+  background-size: cover;
+}
+
+#slide-1 h1 {
+  text-shadow: 1px 2px 4px #191919;
+}
+
+#slide-1 p {
+  text-shadow: 1px 1px 1px #191919;
+}
+
+.center {
+  text-align: center;
+}
+
+img.badge {
+  height: 128px;
+  width: 128px !important;
+  border-radius: 50% !important;
+}
+
+/* presentation styles */
+
+.slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  padding: 100px;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+
+  font-weight: 200;
+  font-size: 200%;
+  line-height: 1.375;
+}
+
+.slide-content img {
+  border-radius: 3px;
+  width: 100%;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.arrow {
+  width: 0; height: 0;
+  border: 15px solid #272822;
+  float: left;
+  margin-right: 15px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prev {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+
+  border-left-width: 0;
+  border-right-width: 25px;
+}
+
+.next {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+
+  border-left-width: 25px;
+  border-right-width: 0;
+}
+
+.prev:hover {
+  border-right-color: #eee;
+  cursor: pointer;
+}
+
+.next:hover {
+  border-left-color: #eee;
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-size: 300%;
+  line-height: 1.2;
+  text-align: center;
+  margin: 170px 0 0;
+}
+
+h2 {
+  font-size: 100%;
+  line-height: 1.2;
+  margin: 5px 0;
+  text-align: center;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 140%;
+  line-height: 1.2;
+  border-bottom: 2px ridge #fafafa;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+ul {
+  padding: 20px 0 0 60px;
+  font-weight: 200;
+  line-height: 1.375;
+}
+
+blockquote {
+  background: #272822;
+  margin-left: 0;
+  padding-left: 20px;
+  border-left: 5px solid #eee;
+  border-radius: 0 3px 3px 0;
+}
+
+blockquote p {
+  color: #eee;
+  padding: 0.5em;
+}
+
+.left {
+  float: left;
+  width: 48%;
+}
+
+.right {
+  float: right;
+  width: 48%;
+}
+
+.author h1 {
+  font-size: 170%;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.author h3 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 95%;
+  border: none;
+}
+
+.author h3.twitter::before {
+  content: 'Twitter: '
+}
+
+.author h3.github::before {
+  content: 'Github: '
+}
+
+.author h3.email::before {
+  content: 'Email: '
+}
+
+.author h3.url::before {
+  content: 'Web: '
+}
+
+a {
+  text-decoration: none;
+  color: #66D9EF;
+}
+
+a:hover {
+  color: #66D9EF;
+  border-bottom: 1px solid #66D9EF;
+}
+
+pre {
+  font-size: 75%;
+  line-height: 1.3;
+}
+
+table td, table th {
+  padding-right: 3em;
+  text-align: left;
+}
+
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 3px;
+  background-color: #A6E22E;
+
+  -webkit-transition: width 0.15s ease-out;
+  -moz-transition: width 0.15s ease-out;
+  -o-transition: width 0.15s ease-out;
+  transition: width 0.15s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+/* code highlighting */
+
+code {
+  background-color: #272822;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+pre code {
+  display: block;
+  font-family: 'Source Code Pro';
+  font-weight: 400;
+  padding: 0.5em;
+  background: #272822;
+  overflow-y: hidden;
+}
+
+pre .tag,
+pre .tag .title,
+pre .keyword,
+pre .literal,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: #F92672;
+}
+
+pre code {
+  color: #DDD;
+}
+
+pre code .constant {
+  color: #66D9EF;
+}
+
+pre .class .title {
+  color: white;
+}
+
+pre .attribute,
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+  color: #BF79DB;
+}
+
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .title,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: #A6E22E;
+}
+
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #75715E;
+}
+
+pre .keyword,
+pre .literal,
+pre .css .id,
+pre .phpdoc,
+pre .title,
+pre .haskell .type,
+pre .vbscript .built_in,
+pre .sql .aggregate,
+pre .rsl .built_in,
+pre .smalltalk .class,
+pre .diff .header,
+pre .chunk,
+pre .winutils,
+pre .bash .variable,
+pre .apache .tag,
+pre .tex .special,
+pre .request,
+pre .status {
+  font-weight: 600;
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
+}
+
+/* responsiveness */
+
+@media (max-width: 850px) {
+
+  body {
+    font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
+  }
+
+  img {
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 120px;
+  }
+
+  .prev, .prev:hover {
+    border-right-color: rgba(135, 135, 135, 0.5);
+  }
+
+  .next, .next:hover {
+    border-left-color: rgba(135, 135, 135, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 50%;
+    overflow: hidden;
+  }
+
+  .slide-content {
+    padding: 10px;
+    margin-top: 10px;
+    height: 340px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  .hidden {
+    display: inline;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  body {
+    margin: 0 auto !important;
+    border: 0;
+    padding: 0;
+    float: none !important;
+    overflow: visible;
+    background: none !important;
+    font-size: 52%;
+  }
+
+  .progress, .controls {
+    display: none;
+  }
+
+  .slide {
+    position: static;
+  }
+
+  .slide-content {
+    border: 1px solid #222;
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 3.5in;
+    overflow: visible;
+  }
+
+  .slide:nth-child(even) {
+    /* 2 slides per page */
+    page-break-before: always;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><h1 id="python-basics">Python Basics</h1>
+<h2 id="a-quick-primer-on-the-scripting-language-">A quick primer on the scripting language.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-2">
+    <section class="slide-content"><ul>
+<li>Introduction to Python</li>
+<li>Control Structures</li>
+<li>Basic Data Types</li>
+<li>Advanced Data Types</li>
+<li>Dictionaries</li>
+<li>Functions</li>
+<li>Exception Handling</li>
+<li>Classes</li>
+<li>Files</li>
+<li>Larger Programs</li>
+<li>Pattern Matching</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h3 id="introduction-to-python">Introduction to Python</h3>
+<ul>
+<li>General purpose high level scripting language:</li>
+<li>Emphasis placed on<ul>
+<li>Human Readability.</li>
+<li>Self describing code.</li>
+</ul>
+</li>
+</ul>
+<p><em>from PEP-20 - The Zen of Python</em>:</p>
+<pre><code> Beautiful is better than ugly
+ Explicit is better than implicit
+ Simple is better than complex
+ Complex is better than complicated
+ Readability counts</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h3 id="introduction-to-python-hello-world-">Introduction to Python - <em>Hello World</em></h3>
+<p>Python can be run in two ways, either in <strong>The Python Interpreter</strong>:</p>
+<p><em>hello.py</em>:</p>
+<pre><code class="lang-python">print(<span class="hljs-string">'Hello World!'</span>)</code></pre>
+<pre><code class="lang-bash">&gt; python hello.py
+Hello World!</code></pre>
+<p>or in an <em>Interactive shell</em>:</p>
+<pre><code class="lang-bash">&gt; python
+Python 2.7.9 (default, May  1 2015, 19:04:44)
+[GCC 4.2.1 Compatible Apple LLVM 6.1.0 (clang-602.0.49)] on darwin
+Type <span class="hljs-string">"help"</span>, <span class="hljs-string">"copyright"</span>, <span class="hljs-string">"credits"</span> or <span class="hljs-string">"license"</span> <span class="hljs-keyword">for</span> more information.
+&gt;&gt;&gt; <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hello World!"</span>)
+Hello World!
+&gt;&gt;&gt; <span class="hljs-built_in">exit</span>()</code></pre>
+<p><strong> Try doing the following in an interactive shell</strong>:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> this</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h3 id="basic-data-types">Basic Data Types</h3>
+<ul>
+<li>Everything is an object.<ul>
+<li>Interpreter can be left to decide what a variable is.</li>
+<li>Explicit casts are available (int(), str() etc) but are not recommended.</li>
+</ul>
+</li>
+</ul>
+<p><em>variables.py</em></p>
+<pre><code class="lang-python">i = <span class="hljs-number">2</span>
+f = <span class="hljs-number">0.33</span>
+s = <span class="hljs-string">"This is a string"</span>
+
+print(s)
+print(f * i)</code></pre>
+<pre><code class="lang-bash">&gt; python variables.py
+This is a string
+0.66</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h3 id="basic-data-types-string-ms-since-everything-s-an-object-strings-have-methods-for-manipiulation-anipulation-">Basic Data Types - <em>String Ms = &#39;Since everything\&#39;s an object, strings have methods for manipiulation&#39;anipulation</em></h3>
+<p>Since everything is an object, strings have builtin methods for modification.</p>
+<p><em>strings.py</em></p>
+<pre><code class="lang-python">s = <span class="hljs-string">'Since everything\'s an object, strings have methods for manipiulation'</span>
+print(s)
+print(s.rstrip(<span class="hljs-string">'manipiulation'</span>))
+print(s.upper())
+print(s.lower())
+print(s.swapcase())</code></pre>
+<pre><code>&gt; python strings.py
+Since everything&#39;s an object, strings have methods for manipiulation
+Since everything&#39;s an object, strings have methods for 
+SINCE EVERYTHING&#39;S AN OBJECT, STRINGS HAVE METHODS FOR MANIPIULATION
+since everything&#39;s an object, strings have methods for manipiulation
+sINCE EVERYTHING&#39;S AN OBJECT, STRINGS HAVE METHODS FOR MANIPIULATION</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h3 id="sequence-data-types-lists-">Sequence Data Types - <em>Lists</em></h3>
+<ul>
+<li>As described, lists are a collection of objects.</li>
+<li>Behave in the same way as c arrays, but with the benifits of being an object in themselves!</li>
+<li>Lists are <strong>mutable</strong>.</li>
+<li>Can be added to with .append() and concanated with .extend()</li>
+</ul>
+<p><em>list.py</em></p>
+<pre><code class="lang-python">list_1        = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>]
+list_2        = [<span class="hljs-string">'a'</span>, <span class="hljs-string">'b'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'d'</span>]
+list_specials = [[<span class="hljs-string">'a'</span>], (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>), <span class="hljs-keyword">False</span>]
+
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(list_1, len(list_1)))
+
+list_1.append(<span class="hljs-number">5</span>)
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(list_1, len(list_1)))
+
+list_1.extend(list_2)
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(list_1, len(list_1)))
+
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(list_specials, len(list_specials)))</code></pre>
+<pre><code>&gt; python list.py
+[1, 2, 3, 4] is of length 4
+[1, 2, 3, 4, 5] is of length 5
+[1, 2, 3, 4, 5, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;] is of length 9
+[[&#39;a&#39;], (1, 2, 3), False] is of length 3</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h3 id="sequence-data-types-tuples-">Sequence Data Types - <em>Tuples</em></h3>
+<ul>
+<li>Similar to lists except that they are <strong>immutable</strong>!</li>
+<li>Cannot be modified once created.</li>
+<li>Useful when returning more than one thing from <em>functions</em> (see later).</li>
+</ul>
+<p><em>tuple.py</em></p>
+<pre><code class="lang-python">x1 = ()
+x2 = (<span class="hljs-number">1</span>,)
+x3 = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+x4 = (<span class="hljs-number">1</span>, <span class="hljs-string">"mixed"</span>, <span class="hljs-number">2</span>, <span class="hljs-string">"tuple"</span>)
+x5 = ((<span class="hljs-number">1</span>, <span class="hljs-number">2</span>), (<span class="hljs-number">3</span>, <span class="hljs-number">4</span>))
+
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(x1, len(x1)))
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(x2, len(x2)))
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(x3, len(x3)))
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(x4, len(x4)))
+print(<span class="hljs-string">'{0} is of length {1}'</span>.format(x5, len(x5)))</code></pre>
+<pre><code>&gt; python tuple.py
+()  is of length  0
+(1,)  is of length  1
+(1, 2, 3)  is of length  3
+(1, &#39;mixed&#39;, 2, &#39;tuple&#39;)  is of length  4
+((1, 2), (3, 4))  is of length  2</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="sequence-data-types-dictionaries-">Sequence Data Types - <strong>Dictionaries</strong></h3>
+<ul>
+<li>Used to store <strong>key value pairs</strong>.</li>
+<li>Not stored in any particular order, left up to interpreter to order when inserting/accessing.</li>
+<li>Values can be accessed/updated by refering to dictionary&#39;s key.</li>
+</ul>
+<p><em>dict.py</em></p>
+<pre><code class="lang-python">d = {}
+d[<span class="hljs-string">'name'</span>] = <span class="hljs-string">'Matt'</span>
+d[<span class="hljs-string">'job'</span>] = <span class="hljs-string">'something or other'</span>
+
+print(d)
+print(d.keys())
+print(<span class="hljs-string">'my name is{0}'</span>.format(d[<span class="hljs-string">'name'</span>]))
+print(<span class="hljs-string">'and i do {0}'</span>.format(d[<span class="hljs-string">'job'</span>]))</code></pre>
+<pre><code>&gt; python dict.py
+{&#39;job&#39;: &#39;something or other&#39;, &#39;name&#39;: &#39;Matt&#39;}
+[&#39;job&#39;, &#39;name&#39;]
+my name is Matt
+and i do something or other</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="control-structures">Control Structures</h3>
+<h4 id="if">IF</h4>
+<p>Only execute statement(s) if condtion is met.</p>
+<pre><code class="lang-python">x = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]
+<span class="hljs-keyword">if</span> len(x) &gt; <span class="hljs-number">0</span>:
+    print(<span class="hljs-string">'IF:{0}'</span>.format(x))</code></pre>
+<h4 id="for">FOR</h4>
+<p>Iterates through items in collection (set, list, tuple etc...)</p>
+<pre><code class="lang-python"><span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> x:
+    print(<span class="hljs-string">'FOR:{0}'</span>.format(item))</code></pre>
+<h4 id="while">WHILE</h4>
+<p>Keep executing statement(s) until condition is not met.</p>
+<pre><code class="lang-python">y = []
+i = <span class="hljs-number">0</span>
+<span class="hljs-keyword">while</span> len(y) &lt; len(x):
+    i += <span class="hljs-number">1</span>
+    y.append(i)
+print(<span class="hljs-string">'WHILE:{0}'</span>.format(y))</code></pre>
+<pre><code>IF:[1, 2, 3]
+FOR:1
+FOR:2
+FOR:3
+WHILE:[1]
+WHILE:[1, 2]
+WHILE:[1, 2, 3]</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="functions">Functions</h3>
+<ul>
+<li>Used to logically seperate off common code.</li>
+<li>Can return value(s) to calling function.</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_up</span><span class="hljs-params">(num_list)</span>:</span>
+    x = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> num_list:
+        x += i
+    <span class="hljs-keyword">return</span> x
+
+
+<span class="hljs-comment"># our script starts running from here.</span>
+nums = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]
+print(<span class="hljs-string">'The sum of {0} is {1}'</span>.format(nums, add_up(nums)))</code></pre>
+<pre><code>The sum of [1, 2, 3, 4, 5, 6] is 21</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="exception-handling">Exception Handling</h3>
+<ul>
+<li>Gracefully handle problems occuring in execution.</li>
+<li>exceptions are signals sent from interpreter at time of problem.</li>
+<li>Unless handled, they will cause a program to crash, displaying the exception.</li>
+</ul>
+<pre><code class="lang-python">x = <span class="hljs-number">3</span>
+print(x / <span class="hljs-number">0</span>)</code></pre>
+<pre><code>&gt; python exception.py
+Traceback (most recent call last):
+  File &quot;exception.py&quot;, line 2, in &lt;module&gt;
+    print(x / 0)
+ZeroDivisionError: integer division or modulo by zero</code></pre>
+<ul>
+<li>Exceptions can be used by wrapping code in try / except statements.</li>
+</ul>
+<pre><code class="lang-python">x = <span class="hljs-number">3</span>
+<span class="hljs-keyword">try</span>:
+    print(x / <span class="hljs-number">0</span>)
+<span class="hljs-keyword">except</span> ZeroDivisionError:
+    print(<span class="hljs-string">"You're trying to print by zero, this isnt allowed!"</span>)</code></pre>
+<pre><code>&gt; python exception.py
+You&#39;re trying to print by zero, this isnt allowed!</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="classes">Classes</h3>
+<ul>
+<li>Used to group together variables/classes logically (usually into a model of something).</li>
+<li>All the types we have been using are classes!</li>
+</ul>
+<p><em>class.py</em></p>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TrainingGroup</span>:</span>
+    <span class="hljs-comment"># class members</span>
+    date = <span class="hljs-string">''</span>
+    participants = []
+
+    <span class="hljs-comment"># class methods</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, date, participants)</span>:</span>
+        self.date = date
+        self.participants = participants
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__str__</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'{0} participants on {1}'</span>.format(len(self.participants), self.date)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">kick_member</span><span class="hljs-params">(self, idiot)</span>:</span>
+        new_members = []
+        <span class="hljs-keyword">for</span> member <span class="hljs-keyword">in</span> self.participants:
+            <span class="hljs-keyword">if</span> idiot != member:
+                new_members.append(member)
+            <span class="hljs-keyword">else</span>:
+                print(<span class="hljs-string">'kicking {0}'</span>.format(idiot))
+        self.participants = new_members
+
+
+group = TrainingGroup(<span class="hljs-string">'2015-08-10'</span>, [<span class="hljs-string">'Tom'</span>, <span class="hljs-string">'Dick'</span>, <span class="hljs-string">'Harry'</span>])
+print(group)
+print(group.participants)
+group.kick_member(<span class="hljs-string">'Dick'</span>)
+print(group)
+print(group.participants)</code></pre>
+<pre><code>&gt; python class.py
+3 participants on 2015-08-10
+[&#39;Tom&#39;, &#39;Dick&#39;, &#39;Harry&#39;]
+kicking Dick
+2 participants on 2015-08-10
+[&#39;Tom&#39;, &#39;Harry&#39;]</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="files">Files</h3>
+<p><em>file.py</em></p>
+<pre><code class="lang-python">infile  = open(<span class="hljs-string">'testfile.txt'</span>, <span class="hljs-string">'r'</span>)       <span class="hljs-comment"># opened for reading only</span>
+outfile = open(<span class="hljs-string">'file.output.txt'</span>, <span class="hljs-string">'w'</span>)    <span class="hljs-comment"># opened for writing</span>
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> infile.readlines():
+    outfile.write(line)</code></pre>
+<pre><code>&gt; python file.py
+
+&gt; cat file.output.txt
+this
+is
+is
+a
+test
+file</code></pre>
+<p>Files can be opened in different <em>modes</em>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">Open text file for reading. The stream is positioned at the beginning of the file.</td>
+</tr>
+<tr>
+<td style="text-align:left">r+</td>
+<td style="text-align:left">Open for reading and writing. The stream is positioned at the beginning of the file.</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">Truncate file to zero length or create text file for writing. The stream is positioned at the beginning of the file.</td>
+</tr>
+<tr>
+<td style="text-align:left">w+</td>
+<td style="text-align:left">Open for reading and writing.  The file is created if it does not exist, otherwise it is truncated.  The stream is</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">positioned at the beginning of the file.</td>
+</tr>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">Open for writing.  The file is created if it does not exist. The stream is positioned at the end of the file.</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">Subsequent writes to the file will always end up at the then current end of file.</td>
+</tr>
+<tr>
+<td style="text-align:left">a+</td>
+<td style="text-align:left">Open for reading and writing. The file is created if it does not exist.  The stream is positioned at the end of the</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">file.  Subsequent writes to the file will always end up at the then current end of file.</td>
+</tr>
+</tbody>
+</table>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="larger-programs-using-modules-">Larger Programs - <em>Using Modules</em></h3>
+<ul>
+<li>Large codebases can be broken up into seperate files.</li>
+<li><em>Calling</em> functions calling functions from another file need to have <strong>imported</strong> them before use.</li>
+<li>Good practice to cut down on <em>code replication</em>.</li>
+<li>Importing a file causes <strong>all code in the file to be executed</strong>.<ul>
+<li>Need to be wary of code not within a function</li>
+<li>Can <em>guard</em> against this code by wrapping it in <code>if __name__ == &#39;__main__&#39;:</code></li>
+</ul>
+</li>
+</ul>
+<p><em>mymodule.py</em></p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sum_numeric_list</span><span class="hljs-params">(nums)</span>:</span>
+    <span class="hljs-string">"""
+    Accepts a list of numeric values.
+    Returns the sum of the elements.
+    """</span>
+    sum = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> item <span class="hljs-keyword">in</span> nums:
+        sum += item
+    <span class="hljs-keyword">return</span> sum
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">prune_dict</span><span class="hljs-params">(dict, keys_to_remove)</span>:</span>
+    <span class="hljs-string">"""
+    Accepts a dict to priune and a list of keys to remove.
+    Matching keys are deleted and rmainders returned.
+    """</span>
+    pruned_dict = {}
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> dict.keys():
+        <span class="hljs-keyword">if</span> key <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> keys_to_remove:
+            pruned_dict[key] = dict[key]
+
+    <span class="hljs-keyword">return</span> pruned_dict
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">'__main__'</span>:
+    test_ints = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]
+    print(<span class="hljs-string">'The sum of {0} is {1}'</span>.format(test_ints, sum_numeric_list(test_ints)))
+
+    test_dict = {<span class="hljs-string">'Tom'</span>: <span class="hljs-string">'The First'</span>, <span class="hljs-string">'Dick'</span>: <span class="hljs-string">'The Second'</span>, <span class="hljs-string">'Harry'</span>: <span class="hljs-string">'The Third'</span>}
+    pruned_dict = prune_dict(test_dict, <span class="hljs-string">'Tom'</span>)
+    print(<span class="hljs-string">'Stripping \'Tom\' from {0} gives us {1}'</span>.format(test_dict, pruned_dict))</code></pre>
+<pre><code>&gt; python mymodule.py
+The sum of [1, 2, 3, 4, 5] is 15
+Stripping &#39;Tom&#39; from {&#39;Harry&#39;: &#39;The Third&#39;, &#39;Dick&#39;: &#39;The Second&#39;, &#39;Tom&#39;: &#39;The First&#39;} gives us {&#39;Dick&#39;: &#39;The Second&#39;, &#39;Harry&#39;: &#39;The Third&#39;}</code></pre>
+<p>Notice how just importing the module doesn&#39;t execute the test code:</p>
+<pre><code>&gt; python
+Python 2.7.9 (default, May  1 2015, 19:04:44)
+[GCC 4.2.1 Compatible Apple LLVM 6.1.0 (clang-602.0.49)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import mymodule
+&gt;&gt;&gt; dir(mymodule)
+[&#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__file__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;prune_dict&#39;, &#39;sum_numeric_list&#39;]</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="larger-programs-using-modules-">Larger Programs - <em>Using Modules</em></h3>
+<p>After importing the module, you can now use it&#39;s functions without the test code being called:</p>
+<p><em>import py:</em></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> mymodule
+
+<span class="hljs-keyword">from</span> mymodule <span class="hljs-keyword">import</span> prune_dict
+
+nums = [<span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>]
+print(<span class="hljs-string">'SUM:{0}'</span>.format(mymodule.sum_numeric_list(nums)))
+
+dict = {<span class="hljs-string">'a'</span>: <span class="hljs-number">1</span>, <span class="hljs-string">'b'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'c'</span>: <span class="hljs-number">3</span>}
+new_dict = prune_dict(dict, <span class="hljs-string">'b'</span>)
+
+print(<span class="hljs-string">'dict:     {0}'</span>.format(dict))
+print(<span class="hljs-string">'new_dict: {0}'</span>.format(new_dict))</code></pre>
+<pre><code>&gt; python import.py
+SUM:30
+dict:{&#39;a&#39;: 1, &#39;c&#39;: 3, &#39;b&#39;: 2}
+new_dict:{&#39;a&#39;: 1, &#39;c&#39;: 3}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="pattern-matching">Pattern Matching</h3>
+<ul>
+<li>Regex matching is done via built in <code>re</code> module.</li>
+<li>re.search - <em>look for pattern anywhere within string</em></li>
+<li>re.match  - <em>look for exact pattern match in string</em></li>
+<li>regex&#39;s can be pre-compiled for optimisation <em>see example</em></li>
+</ul>
+<p><em>regex cheat sheet</em>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">^</td>
+<td style="text-align:left">start of string</td>
+</tr>
+<tr>
+<td style="text-align:right">$</td>
+<td style="text-align:left">end of string</td>
+</tr>
+<tr>
+<td style="text-align:right">[abc]</td>
+<td style="text-align:left">Any one character from list (a OR b OR c)</td>
+</tr>
+<tr>
+<td style="text-align:right">[a-m]</td>
+<td style="text-align:left">Any one character from range (a OR b OR ... OR m)</td>
+</tr>
+<tr>
+<td style="text-align:right">[^abc]</td>
+<td style="text-align:left">Any one character not in list (NOT a NOR b NOR c)</td>
+</tr>
+<tr>
+<td style="text-align:right">.</td>
+<td style="text-align:left">Any one character</td>
+</tr>
+<tr>
+<td style="text-align:right">\s</td>
+<td style="text-align:left">Any white space character</td>
+</tr>
+<tr>
+<td style="text-align:right">\S</td>
+<td style="text-align:left">Any NON white space character</td>
+</tr>
+<tr>
+<td style="text-align:right">\d</td>
+<td style="text-align:left">Any digit</td>
+</tr>
+<tr>
+<td style="text-align:right">\D</td>
+<td style="text-align:left">Any NON digit</td>
+</tr>
+<tr>
+<td style="text-align:right">\w</td>
+<td style="text-align:left">Any alphanumeric</td>
+</tr>
+<tr>
+<td style="text-align:right">\W</td>
+<td style="text-align:left">Any NON alphanumeric</td>
+</tr>
+<tr>
+<td style="text-align:right">()</td>
+<td style="text-align:left">Group together matches within parentheses (use with re.search().group()).</td>
+</tr>
+</tbody>
+</table>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="pattern-matching">Pattern Matching</h3>
+<p><em>matching.py</em></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> re
+string = <span class="hljs-string">'The quick brown fox jumps over the laxy dog.'</span>
+
+print(<span class="hljs-string">'search:      {0}'</span>.format(re.search(<span class="hljs-string">'The quick brown fox'</span>, string)))
+print(<span class="hljs-string">'search_gr0:  {0}'</span>.format(re.search(<span class="hljs-string">'The quick brown fox'</span>, string).group(<span class="hljs-number">0</span>)))
+
+print(<span class="hljs-string">'match:       {0}'</span>.format(re.match(<span class="hljs-string">'quick (brown) fox'</span>, string)))
+print(<span class="hljs-string">'match_gr0:   {0}'</span>.format(re.match(<span class="hljs-string">'\S* quick (brown) fox'</span>, string).group(<span class="hljs-number">0</span>)))
+print(<span class="hljs-string">'match_gr1:   {0}'</span>.format(re.match(<span class="hljs-string">'\S* quick (brown) fox'</span>, string).group(<span class="hljs-number">1</span>)))
+
+regex = re.compile(<span class="hljs-string">'^[\S\s]*(over) (the)[\s\S]*'</span>)
+print(<span class="hljs-string">'compiled_match_gr0:  {0}'</span>.format(regex.match(string).group(<span class="hljs-number">0</span>)))
+print(<span class="hljs-string">'compiled_match_gr1:  {0}'</span>.format(regex.match(string).group(<span class="hljs-number">1</span>)))
+print(<span class="hljs-string">'compiled_match_gr2:  {0}'</span>.format(regex.match(string).group(<span class="hljs-number">2</span>)))</code></pre>
+<pre><code>&gt; python matching.py
+search: &lt;_sre.SRE_Match object at 0x10938acc8&gt;
+search_gr0: The quick brown fox
+match: None
+match_gr0: The quick brown fox
+match_gr1: brown
+compiled_match_gr0 The quick brown fox jumps over the laxy dog.
+compiled_match_gr1 over
+compiled_match_gr2 the</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="debugging-pdb">Debugging - PDB</h3>
+<ul>
+<li>Drops script into interactive console either when:<ul>
+<li>Interpreter hit <code>pdb.set_trace()</code> function.</li>
+<li>Interpreter hits an <em>unhandled</em> exception (if script called with <code>python -m pdb &lt;script.py&gt;</code></li>
+</ul>
+</li>
+<li>Same as an interactive python shell any commands/functions you like can be called manually to test.</li>
+</ul>
+<p><em>basic controls:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">l</td>
+<td style="text-align:left">show code at current frame</td>
+</tr>
+<tr>
+<td style="text-align:right">c</td>
+<td style="text-align:left">continue code execution</td>
+</tr>
+<tr>
+<td style="text-align:right">bob</td>
+<td style="text-align:left">prints variable &#39;bob&#39;</td>
+</tr>
+<tr>
+<td style="text-align:right">Ctrl-c</td>
+<td style="text-align:left">quit script as usual</td>
+</tr>
+</tbody>
+</table>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-20">
+    <section class="slide-content"><div class="author">
+  <h1 class="name">Matt Mulhern</h1>
+    <h3 class="email">
+      <a href="mailto:mattmulhern01@gmail.com">mattmulhern01@gmail.com</a>
+    </h3>
+</div>
+</section>
+  </div>
+
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="arrow next"></div>
+  </div>
+
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
+ */
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
+}
+
+
+/**
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
+ */
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
+
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
+
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
+  updateURL();
+  updateTabIndex();
+}
+
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+  window.history.replaceState({} , null, '#' + currentPosition());
+}
+
+
+/**
+ * Sets the progress indicator.
+ */
+function updateProgress() {
+  var progressBar = document.querySelector('.progress-bar');
+
+  if (progressBar !== null) {
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
+  }
+}
+
+
+/**
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
+ */
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
+
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
+
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
+  }
+}
+
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+         document.mozFullScreenElement ||
+         document.webkitFullscreenElement ||
+         document.msFullscreenElement;
+}
+
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
+
+  docElem.requestFullscreen =
+      docElem.requestFullscreen ||
+      docElem.msRequestFullscreen ||
+      docElem.mozRequestFullScreen ||
+      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+      doc.exitFullscreen ||
+      doc.msExitFullscreen ||
+      doc.mozCancelFullScreen ||
+      doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex();
+
+  // If the location hash specifies a page number, go to it.
+  var page = window.location.hash.slice(1);
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
+
+  document.onkeydown = function (e) {
+    var kc = e.keyCode;
+
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
+    } else if (kc === 13) {
+      toggleFullScreen();
+    }
+  };
+
+  if (document.querySelector('.next') && document.querySelector('.prev')) {
+    document.querySelector('.next').onclick = function (e) {
+      e.preventDefault();
+      navigate(1);
+    };
+
+    document.querySelector('.prev').onclick = function (e) {
+      e.preventDefault();
+      navigate(-1);
+    };
+  }
+});
+
+  </script>
+</body>
+</html>
