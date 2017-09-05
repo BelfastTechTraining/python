@@ -1,0 +1,11 @@
+x1 = ()
+x2 = (1,)
+x3 = (1, 2, 3)
+x4 = (1, "mixed", 2, "tuple")
+x5 = ((1, 2), (3, 4))
+
+print('{0} is of length {1}'.format(x1, len(x1)))
+print('{0} is of length {1}'.format(x2, len(x2)))
+print('{0} is of length {1}'.format(x3, len(x3)))
+print('{0} is of length {1}'.format(x4, len(x4)))
+print('{0} is of length {1}'.format(x5, len(x5)))
