@@ -10,6 +10,8 @@ output: index.html
 # Python Basics
 ## A quick primer on the scripting language.
 
+
+_Generated using [cleaver](https://github.com/jdan/cleaver)_
 --
 
 * Introduction to Python
@@ -110,7 +112,7 @@ print(s.swapcase())
 ```
 > python strings.py
 Since everything's an object, strings have methods for manipiulation
-Since everything's an object, strings have methods for 
+Since everything's an object, strings have methods for
 SINCE EVERYTHING'S AN OBJECT, STRINGS HAVE METHODS FOR MANIPIULATION
 since everything's an object, strings have methods for manipiulation
 sINCE EVERYTHING'S AN OBJECT, STRINGS HAVE METHODS FOR MANIPIULATION
@@ -553,3 +555,8 @@ compiled_match_gr2 the
 |c      | continue code execution       |
 |bob    | prints variable 'bob'         |
 |Ctrl-c | quit script as usual          |
+
+--
+### What Now?
+Have a go at the [exercises](https://belfasttechtraining.github.io/python-intro/exercises).
+ --
