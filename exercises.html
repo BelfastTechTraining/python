@@ -1,0 +1,846 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Python Exercises</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <style type="text/css">
+    /* Color Palette Based on Monokai
+
+          body : #191919, #fafafa
+    blockquote : #272822, #eeeeee
+         links : #66d9ef
+           pre : #272822, #75715e, #dddddd, #f92672,
+                 #a6e22e, #66d9ef, #bf79db
+*/
+
+/* Theme styles */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fafafa;
+  background-color: #191919;
+  font-size: 100%;
+}
+
+/* custom slide styles */
+
+/* fade.jpg, wireballblack.png, space.png, snow2.jpg, pinstripe_rain.png, orion.jpg, nodes.jpg */
+
+#slide-1 {
+  background: #222 url(wireball.png) center center no-repeat;
+  background-size: cover;
+}
+
+#slide-1 h1 {
+  text-shadow: 1px 2px 4px #191919;
+}
+
+#slide-1 p {
+  text-shadow: 1px 1px 1px #191919;
+}
+
+.center {
+  text-align: center;
+}
+
+img.badge {
+  height: 128px;
+  width: 128px !important;
+  border-radius: 50% !important;
+}
+
+/* presentation styles */
+
+.slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  padding: 100px;
+}
+
+.slide-content {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 0;
+
+  font-weight: 200;
+  font-size: 200%;
+  line-height: 1.375;
+}
+
+.slide-content img {
+  border-radius: 3px;
+  width: 100%;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.arrow {
+  width: 0; height: 0;
+  border: 15px solid #272822;
+  float: left;
+  margin-right: 15px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prev {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+
+  border-left-width: 0;
+  border-right-width: 25px;
+}
+
+.next {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+
+  border-left-width: 25px;
+  border-right-width: 0;
+}
+
+.prev:hover {
+  border-right-color: #eee;
+  cursor: pointer;
+}
+
+.next:hover {
+  border-left-color: #eee;
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-size: 300%;
+  line-height: 1.2;
+  text-align: center;
+  margin: 170px 0 0;
+}
+
+h2 {
+  font-size: 100%;
+  line-height: 1.2;
+  margin: 5px 0;
+  text-align: center;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 140%;
+  line-height: 1.2;
+  border-bottom: 2px ridge #fafafa;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+ul {
+  padding: 20px 0 0 60px;
+  font-weight: 200;
+  line-height: 1.375;
+}
+
+blockquote {
+  background: #272822;
+  margin-left: 0;
+  padding-left: 20px;
+  border-left: 5px solid #eee;
+  border-radius: 0 3px 3px 0;
+}
+
+blockquote p {
+  color: #eee;
+  padding: 0.5em;
+}
+
+.left {
+  float: left;
+  width: 48%;
+}
+
+.right {
+  float: right;
+  width: 48%;
+}
+
+.author h1 {
+  font-size: 170%;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.author h3 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 95%;
+  border: none;
+}
+
+.author h3.twitter::before {
+  content: 'Twitter: '
+}
+
+.author h3.github::before {
+  content: 'Github: '
+}
+
+.author h3.email::before {
+  content: 'Email: '
+}
+
+.author h3.url::before {
+  content: 'Web: '
+}
+
+a {
+  text-decoration: none;
+  color: #66D9EF;
+}
+
+a:hover {
+  color: #66D9EF;
+  border-bottom: 1px solid #66D9EF;
+}
+
+pre {
+  font-size: 75%;
+  line-height: 1.3;
+}
+
+table td, table th {
+  padding-right: 3em;
+  text-align: left;
+}
+
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 3px;
+  background-color: #A6E22E;
+
+  -webkit-transition: width 0.15s ease-out;
+  -moz-transition: width 0.15s ease-out;
+  -o-transition: width 0.15s ease-out;
+  transition: width 0.15s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+/* code highlighting */
+
+code {
+  background-color: #272822;
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+
+pre code {
+  display: block;
+  font-family: 'Source Code Pro';
+  font-weight: 400;
+  padding: 0.5em;
+  background: #272822;
+  overflow-y: hidden;
+}
+
+pre .tag,
+pre .tag .title,
+pre .keyword,
+pre .literal,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: #F92672;
+}
+
+pre code {
+  color: #DDD;
+}
+
+pre code .constant {
+  color: #66D9EF;
+}
+
+pre .class .title {
+  color: white;
+}
+
+pre .attribute,
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+  color: #BF79DB;
+}
+
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .title,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: #A6E22E;
+}
+
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #75715E;
+}
+
+pre .keyword,
+pre .literal,
+pre .css .id,
+pre .phpdoc,
+pre .title,
+pre .haskell .type,
+pre .vbscript .built_in,
+pre .sql .aggregate,
+pre .rsl .built_in,
+pre .smalltalk .class,
+pre .diff .header,
+pre .chunk,
+pre .winutils,
+pre .bash .variable,
+pre .apache .tag,
+pre .tex .special,
+pre .request,
+pre .status {
+  font-weight: 600;
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: 0.5;
+}
+
+/* responsiveness */
+
+@media (max-width: 850px) {
+
+  body {
+    font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
+  }
+
+  img {
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 120px;
+  }
+
+  .prev, .prev:hover {
+    border-right-color: rgba(135, 135, 135, 0.5);
+  }
+
+  .next, .next:hover {
+    border-left-color: rgba(135, 135, 135, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 50%;
+    overflow: hidden;
+  }
+
+  .slide-content {
+    padding: 10px;
+    margin-top: 10px;
+    height: 340px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  .hidden {
+    display: inline;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  body {
+    margin: 0 auto !important;
+    border: 0;
+    padding: 0;
+    float: none !important;
+    overflow: visible;
+    background: none !important;
+    font-size: 52%;
+  }
+
+  .progress, .controls {
+    display: none;
+  }
+
+  .slide {
+    position: static;
+  }
+
+  .slide-content {
+    border: 1px solid #222;
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 3.5in;
+    overflow: visible;
+  }
+
+  .slide:nth-child(even) {
+    /* 2 slides per page */
+    page-break-before: always;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><h3 id="ex1-1-py">ex1-1.py</h3>
+<p>Write a program that inputs a 4 digit year and then calculates whether or not it is a leap year.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-2">
+    <section class="slide-content"><h3 id="ex1-2-py">ex1-2.py</h3>
+<p>Using a variation of the above program, calculate the number of days in the inclusive date range &#39;1st January 2000&#39; to &#39;31st December 2999&#39;.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h3 id="ex1-3-py">ex1-3.py</h3>
+<p>Write a program that prints out the square, cubes and fourth power of the first 20 integers.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h3 id="ex1-4-py">ex1-4.py</h3>
+<p>Write a program that prints out the first 20 Fibonacci numbers.  You can use the web to find out the definition of the Fibonacci sequence.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h3 id="ex1-5-py">ex1-5.py</h3>
+<p>Write a program that calculates the ratio of successive pairs of the first 20 Fibonacci numbers.
+Does the ratio appear to converge to a number?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h3 id="ex2-1-py">ex2-1.py</h3>
+<p>Write a program that prints out the sum, difference, product and dividend of two numbers.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h3 id="ex2-2-py">ex2-2.py</h3>
+<p>Use the split() function to split a fullname such as <code>Julius Caesar</code> into two strings called firstName and lastName.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h3 id="ex2-3-py">ex2-3.py</h3>
+<p>Use the range function to generate two separate tuples containing the list of integers from 10 to 19 and from 30 to 39.</p>
+<p>Tuples are immutable, so how can you form a tuple that has all the elements of the other two tuples?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="ex2-4-py">ex2-4.py</h3>
+<p>int(x[,radix]) converts a string to an int using the supplied radix.</p>
+<p>Use this function to compute the decimal value of the binary number <code>101010101010101010101</code></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h3 id="ex2-5-py">ex2-5.py</h3>
+<p>Create a dictionary consisting of people&#39;s names and salaries.</p>
+<p>Initialise the dictionary with at least 5 pairs of names and salaries. Now print the dictionary.</p>
+<p>Why is the printed order different from the order you used to initialise the dictionary?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h3 id="ex3-1-py">ex3-1.py</h3>
+<p>Write a function that calculates the area of a rectangle.
+Decide how many input parameters your function needs.</p>
+<p>The area should be returned from the function.</p>
+<p>Write a test program that calls your function with different sets of test data.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="ex3-2-py">ex3-2.py</h3>
+<p>Write a function that rotates the values of 3 variables.  For example:</p>
+<pre><code>    x = 100
+    y = 200
+    z = 300
+    Rotate( ... )
+    # x is now 200
+    # y is now 300
+    # z is now 100</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="ex3-3-py">ex3-3.py</h3>
+<p>Write a function to calculate Factorials.  </p>
+<p>A Factorial number is the product of all positive integers less than n, e.g.</p>
+<p>factorial(5) = 1 x 2 x 3 x 4 x 5</p>
+<p>Try out:</p>
+<pre><code>    factorial(1)
+    factorial(10)
+    factorial(40)
+    factorial(100)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="ex3-4-py">ex3-4.py</h3>
+<p>Write a function that takes a string and capitalises the first character of the string and ensures the remaining characters are converted to lower case.</p>
+<p>Use the following test data:</p>
+<pre><code>    UpperFirst(&quot;test1&quot;)
+    UpperFirst(&quot;mIxEdCaSe&quot;)
+    UpperFirst(&quot;UPPER&quot;)
+    UpperFirst(&quot;lower&quot;)
+    UpperFirst(&quot;oPPOSITE&quot;)</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="ex3-5-py">ex3-5.py</h3>
+<p>How do you find the intersection of 2 lists (i.e. those elements common to both lists)?</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="ex3-6-py">ex3-6.py</h3>
+<p>Write a function that takes an integer list as a parameter and doubles the value of each element of the array.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="ex3-7-py">ex3-7.py</h3>
+<p>Write a function that takes two int arrays (same size) as parameters and adds the arrays together, element by element.</p>
+<p>Print out the array as part of the function.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="ex3-8-py">ex3-8.py</h3>
+<p>Modify the previous example to return the sum of the two input arrays instead of printing the result.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="ex4-1-py">ex4-1.py</h3>
+<p>Write a program that calculates the factorial of an integer in the range 2 to 10.</p>
+<p>Add exception handling code to prevent calculating a result where the input number is larger than 10, or any negative integer.</p>
+<p>Make sure you can handle the case where the input is not an integer.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h3 id="ex5-1-py">ex5-1.py</h3>
+<p>Write a program that counts the number of lines in a file.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="ex5-2-py">ex5-2.py</h3>
+<p>Write a file copy program</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h3 id="ex5-3-py">ex5-3.py</h3>
+<p>Create a file call TestData.txt with test data consisting of one number per line using your favourite editor.
+Your job is to read the entire file into memory so that you can compute the sum of all the numbers.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="ex5-4-py">ex5-4.py</h3>
+<p>Try the previous example with other test files that may contain non integral data.
+Use exception handling to filter out lines that don&#39;t contain integers.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="ex5-5-py">ex5-5.py</h3>
+<p>Write a program that concatenates three files into a new file.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="ex5-6-py">ex5-6.py</h3>
+<p>Write a program that reads a file, reverses the order of lines in the file and then saves the changes in a new file.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h3 id="ex6-1-py">ex6-1.py</h3>
+<p>Create two subroutines that convert a decimal number in the range 1 to 4000 to Roman numerals, and back.</p>
+<p>Warning: This question is rather more difficult than it looks!</p>
+<p>Don&#39;t spend too much time on it.</p>
+<p><em>Hints:</em></p>
+<ul>
+<li>Use two dicts to map:<ul>
+<li>letters to numbers</li>
+<li>1-9,10&#39;s, 100&#39;s and 1000&#39;s to letters</li>
+</ul>
+</li>
+<li>Use a toRoman() and toDecimal() function for clarity.</li>
+<li>Typical algo for toDecimal():<ul>
+<li>Break letters into an array and iterate through:<ul>
+<li>If a symbol is less than it&#39;s sucessor then negative so flip it&#39;s sign (apending converted decimal to new array.</li>
+</ul>
+</li>
+<li>Summing your new array should give you the decimal number.</li>
+</ul>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h3 id="ex6-2-py">ex6-2.py</h3>
+<p>Words prefixes are also called stems.</p>
+<p>e.g. of the words &#39;dog&#39;, &#39;doable&#39; and &#39;dodecahedron&#39; the stem is &#39;do&#39;.</p>
+<p>Write a program that reads a file with one word per input line and finds the most popular stems of size 2 to 6.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"></section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-29">
+    <section class="slide-content"><div class="author">
+  <h1 class="name">Matt Mulhern</h1>
+    <h3 class="email">
+      <a href="mailto:mattmulhern01@gmail.com">mattmulhern01@gmail.com</a>
+    </h3>
+</div>
+</section>
+  </div>
+
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="arrow next"></div>
+  </div>
+
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
+ */
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
+}
+
+
+/**
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
+ */
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
+
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
+
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
+  updateURL();
+  updateTabIndex();
+}
+
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+  window.history.replaceState({} , null, '#' + currentPosition());
+}
+
+
+/**
+ * Sets the progress indicator.
+ */
+function updateProgress() {
+  var progressBar = document.querySelector('.progress-bar');
+
+  if (progressBar !== null) {
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
+  }
+}
+
+
+/**
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
+ */
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
+
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
+
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
+  }
+}
+
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+         document.mozFullScreenElement ||
+         document.webkitFullscreenElement ||
+         document.msFullscreenElement;
+}
+
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
+
+  docElem.requestFullscreen =
+      docElem.requestFullscreen ||
+      docElem.msRequestFullscreen ||
+      docElem.mozRequestFullScreen ||
+      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+      doc.exitFullscreen ||
+      doc.msExitFullscreen ||
+      doc.mozCancelFullScreen ||
+      doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex();
+
+  // If the location hash specifies a page number, go to it.
+  var page = window.location.hash.slice(1);
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
+
+  document.onkeydown = function (e) {
+    var kc = e.keyCode;
+
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
+    } else if (kc === 13) {
+      toggleFullScreen();
+    }
+  };
+
+  if (document.querySelector('.next') && document.querySelector('.prev')) {
+    document.querySelector('.next').onclick = function (e) {
+      e.preventDefault();
+      navigate(1);
+    };
+
+    document.querySelector('.prev').onclick = function (e) {
+      e.preventDefault();
+      navigate(-1);
+    };
+  }
+});
+
+  </script>
+</body>
+</html>

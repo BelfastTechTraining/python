@@ -3,7 +3,7 @@ theme: ../styles/cleaver-dark
 author:
   name: Matt Mulhern
   email: mattmulhern01@gmail.com
-output: python_exercises.html
+output: exercises.html
 
 --
 
