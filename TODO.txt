@@ -1,3 +1,5 @@
 - user input & argparse
 - context managers (e.g using with file operations)
 - referencing list entries & slicing  i.e list[0] vs list[1:-1]
+- modulo "%" operator
+- "string".format()
