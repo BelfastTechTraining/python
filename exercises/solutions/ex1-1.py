@@ -2,14 +2,15 @@
 """
 ###ex1-1.py
 Write a program that inputs a 4 digit year and then calculates whether or not it is a leap year.
-
-A year is a leap year if it is divisible by 4.
-However there is an exception to this.
-If the year is divisible by 100 it must also be divisible by 400 to be a leap year.
 """
 
 
 def is_leap_year(year):
+    """
+    A year is a leap year if it is divisible by 4.
+    However there is an exception to this.
+    If the year is divisible by 100 it must also be divisible by 400 to be a leap year.
+    """
     is_leap_year = False
 
     if (year % 100 != 0) and (year % 4 == 0):  # if divisible by 4 and NOT 100
