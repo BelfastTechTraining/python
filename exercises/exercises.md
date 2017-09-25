@@ -23,7 +23,9 @@ Write a program that prints out the square, cubes and fourth power of the first 
 --
 
 ###ex1-4.py
-Write a program that prints out the first 20 Fibonacci numbers.  You can use the web to find out the definition of the Fibonacci sequence.
+Write a program that prints out the first 20 Fibonacci numbers.
+
+For clarity, the sequence starts with 1 as defined [here](https://en.wikipedia.org/wiki/Fibonacci_number).
 
 --
 
