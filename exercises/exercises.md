@@ -55,13 +55,6 @@ HINT: range() returns its own special type in Python 3, can you cast to another 
 --
 
 ###ex2-4.py
-int(x[,radix]) converts a string to an int using the supplied radix.
-
-Use this function to compute the decimal value of the binary number `101010101010101010101`
-
---
-
-###ex2-5.py
 Create a dictionary consisting of people's names and salaries.
 
 Initialise the dictionary with at least 5 pairs of names and salaries. Now print the dictionary.
