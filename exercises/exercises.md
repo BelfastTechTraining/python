@@ -50,6 +50,8 @@ Use the range function to generate two separate tuples containing the list of in
 
 Tuples are immutable, so how can you form a tuple that has all the elements of the other two tuples?
 
+HINT: range() returns its own special type in Python 3, can you cast to another type?
+
 --
 
 ###ex2-4.py
