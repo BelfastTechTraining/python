@@ -120,6 +120,12 @@ Use the following test data:
 ###ex3-5.py
 How do you find the intersection of 2 lists (i.e. those elements common to both lists)?
 
+Use the following test data:
+```
+list_a = ["a", "b", "1", [1, 2, 4], ["a", "b"], [1, 2, 4], "foo", "bar", ("this", 1, 4)]
+list_b = ["a", "1", [1, 2, 4], "foo", ("this", 1, 4)]
+```
+
 --
 ###ex3-6.py
 Write a function that takes an integer list as a parameter and doubles the value of each element of the array.
