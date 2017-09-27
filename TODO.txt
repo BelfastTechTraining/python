@@ -3,3 +3,4 @@
 - referencing list entries & slicing  i.e list[0] vs list[1:-1]
 - modulo "%" operator
 - "string".format()
+- ">=python3.6 dictionary ordering"
