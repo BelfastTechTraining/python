@@ -59,8 +59,6 @@ Create a dictionary consisting of people's names and salaries.
 
 Initialise the dictionary with at least 5 pairs of names and salaries. Now print the dictionary.
 
-Why is the printed order different from the order you used to initialise the dictionary?
-
 --
 
 ###ex3-1.py
