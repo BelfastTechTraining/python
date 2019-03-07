@@ -1,4 +1,4 @@
 # python-intro
 
-01 programming basics [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BelfastTechTraining/python/master?filepath=ProgrammingBasics.ipynb)
-02 python intro [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BelfastTechTraining/python/master?filepath=PythonBasics.ipynb)
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BelfastTechTraining/python/master?filepath=01-programming-basics%2FProgrammingBasics.ipynb) 01 programming basics 
+* [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/BelfastTechTraining/python/master?filepath=02-python-basics%2FPythonBasics.ipynb) 02 python intro 
