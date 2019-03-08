@@ -2,3 +2,4 @@ bs4
 urllib.request
 pandas
 matplotlib
+lxml
