@@ -107,7 +107,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 5,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -121,7 +121,7 @@
       "Easy things make life harder, hard things make life easier\n",
       "['Collect underpants', '?', 'Profit']\n",
       "bar\n",
-      "<quotes.Bar object at 0x7fb0dff61940>\n"
+      "<quotes.Bar object at 0x7f6db82c09b0>\n"
      ]
     }
    ],
@@ -159,8 +159,17 @@
     "\n",
     "1. The current directory (or directory in which the script resides).\n",
     "2. If set, a list of directories in the environment variable `PYTHONPATH`.\n",
-    "3. A list of directories configured at installation time for your python environment. Installation time includes when a new virtual environment is created.\n",
-    "\n",
+    "3. A list of directories configured at installation time for your python environment. Installation time includes when a new virtual environment is created."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
     "The list of directories can be seen in python using the sys module\n",
     "\n",
     "```python\n",
@@ -224,25 +233,15 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 8,
    "metadata": {},
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "['Collect underpants', '?', 'Profit']\n"
-     ]
-    },
-    {
-     "ename": "NameError",
-     "evalue": "name 'single_quote' is not defined",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[0;32m<ipython-input-5-39ff4bfc8b17>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mfrom\u001b[0m \u001b[0mquotes\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mmulti_quote\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmulti_quote\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msingle_quote\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m: name 'single_quote' is not defined"
+      "['Collect underpants', '?', 'Profit']\n",
+      "Work is the curse of the drinking classes.\n"
      ]
     }
    ],
@@ -278,7 +277,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 9,
    "metadata": {},
    "outputs": [
     {
@@ -306,7 +305,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 10,
    "metadata": {},
    "outputs": [
     {
@@ -359,7 +358,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 11,
    "metadata": {},
    "outputs": [
     {
@@ -368,7 +367,7 @@
      "text": [
       "Easy things make life harder, hard things make life easier \n",
       " ['Collect underpants', '?', 'Profit']\n",
-      "<quotes.Bar object at 0x10dd071d0>\n"
+      "<quotes.Bar object at 0x7f6db82c0dd8>\n"
      ]
     }
    ],
@@ -381,7 +380,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 12,
    "metadata": {},
    "outputs": [
     {
@@ -413,7 +412,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 13,
    "metadata": {},
    "outputs": [
     {
@@ -435,26 +434,38 @@
        " '_dh',\n",
        " '_i',\n",
        " '_i1',\n",
+       " '_i10',\n",
+       " '_i11',\n",
+       " '_i12',\n",
+       " '_i13',\n",
        " '_i2',\n",
        " '_i3',\n",
        " '_i4',\n",
        " '_i5',\n",
        " '_i6',\n",
        " '_i7',\n",
+       " '_i8',\n",
+       " '_i9',\n",
        " '_ih',\n",
        " '_ii',\n",
        " '_iii',\n",
        " '_oh',\n",
        " 'exit',\n",
        " 'get_ipython',\n",
+       " 'less_eggs',\n",
+       " 'module4',\n",
        " 'multi',\n",
+       " 'multi_quote',\n",
+       " 'my_class',\n",
+       " 'package',\n",
        " 'quit',\n",
+       " 'quotes',\n",
        " 'single',\n",
        " 'single_quote',\n",
        " 'things_someone_else_said']"
       ]
      },
-     "execution_count": 7,
+     "execution_count": 13,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -465,7 +476,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 14,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -489,7 +500,7 @@
        " 'single_quote']"
       ]
      },
-     "execution_count": 8,
+     "execution_count": 14,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -533,8 +544,17 @@
     "```python\n",
     "if __name__ == '__main__':\n",
     "    main()\n",
-    "```\n",
-    "\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
     "This is to prevent against code running when we don't want it to. So in this case, we could import the module to get the `local_zealot` variable in one app. But we could still run the module (script) to use it's orginal functionality. The finished script would look like this :\n",
     "\n",
     "```python\n",
@@ -566,7 +586,517 @@
     "\n",
     "Packages are a way to organise modules and namespaces. For all intents and purposes, a package is a file system directory that contains a number of modules. \n",
     "\n",
-    "They allow hierarchical structure using *dot notation*. "
+    "They allow hierarchical structure using *dot notation*. If we have the following: \n",
+    "\n",
+    "```bash\n",
+    "package/\n",
+    "├── module1.py\n",
+    "└── module2.py\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "module1.py\n",
+    "```python\n",
+    "def eggs():\n",
+    "    print('[module1] eggs()')\n",
+    "\n",
+    "class Egg:\n",
+    "    pass\n",
+    "```\n",
+    "module2.py\n",
+    "```python\n",
+    "def spam():\n",
+    "    print('[module2] spam()')\n",
+    "\n",
+    "class Spam:\n",
+    "    pass\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "This means we can use the import in the same way we have before"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[module1] eggs()\n",
+      "[module2] spam()\n"
+     ]
+    }
+   ],
+   "source": [
+    "import package.module1, package.module2\n",
+    "\n",
+    "package.module1.eggs()\n",
+    "package.module2.spam()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[module1] eggs()\n"
+     ]
+    }
+   ],
+   "source": [
+    "from package.module1 import eggs\n",
+    "eggs()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'package.module2.Spam'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "from package.module2 import Spam as lunch\n",
+    "\n",
+    "print(lunch)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "You can import the whole package, but this doesn't really do anything. This is because it *does not add the modules in the package to the local namespace*."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AttributeError",
+     "evalue": "module 'package' has no attribute 'module1'",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-6-4b75c994a3cd>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;32mimport\u001b[0m \u001b[0mpackage\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mpackage\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mmodule1\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0meggs\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mAttributeError\u001b[0m: module 'package' has no attribute 'module1'"
+     ]
+    }
+   ],
+   "source": [
+    "import package\n",
+    "\n",
+    "package.module1.eggs()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "There is a way around this though, which we'll talk about next. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### __init__.py\n",
+    "\n",
+    "This is a special file that you may have sometimes seen in a python project. When you import a package, this file is run before anything else happens, i.e. initialisation.\n",
+    "\n",
+    "Let have a look at a new package, called imaginatively, new_package.\n",
+    "\n",
+    "```bash\n",
+    "new_package/\n",
+    "├── __init__.py\n",
+    "├── module1.py\n",
+    "└── module2.py\n",
+    "```\n",
+    "\n",
+    "The two modules are the same, but inside the `__init__.py` we have\n",
+    "\n",
+    "```python\n",
+    "print(f\"Running __init__.py from {__name__}\")\n",
+    "import new_package.module1, new_package.module2\n",
+    "```\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "So now when we import it"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Running __init__.py from new_package\n",
+      "[module1] eggs()\n"
+     ]
+    }
+   ],
+   "source": [
+    "import new_package\n",
+    "\n",
+    "new_package.module1.eggs()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "You can see that it runs the code in `__init__`, meaning our two modules have been imported. \n",
+    "\n",
+    "Any arbitrary code can be placed inside this file, though it's generally not recommended to put too much in there. Definitely don't put any application logic in there."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "-"
+    }
+   },
+   "source": [
+    "Prior to python 3.3 it was a requirement to have a `__init__.py` in any package, this is no longer the case. \n",
+    "\n",
+    "Now we have the concept of [Implicit Namespace Packages](https://www.python.org/dev/peps/pep-0420/).\n",
+    "\n",
+    "You can still include them, and of course if you need to do some actual initialisation you need to include it.\n",
+    "\n",
+    "Most of the time I still include them anyway."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### Subpackages\n",
+    "\n",
+    "We can create a nested structure to any depth using sub packages. If we look at another package, this time with four modules in it:\n",
+    "\n",
+    "```bash\n",
+    "final_package/\n",
+    "├── sub_package1\n",
+    "│   ├── module1.py\n",
+    "│   └── module2.py\n",
+    "└── sub_package2\n",
+    "    ├── module3.py\n",
+    "    └── module4.py\n",
+    "```\n",
+    "\n",
+    "we can import in the same manner as before, using the *dot notation*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[module3] more_eggs()\n",
+      "<final_package.sub_package2.module4.CanOSpam object at 0x7f6db8272668>\n"
+     ]
+    }
+   ],
+   "source": [
+    "import final_package.sub_package2.module3\n",
+    "from final_package.sub_package2.moule4 import CanOSpam\n",
+    "\n",
+    "final_package.sub_package2.module3.more_eggs()\n",
+    "print(CanOSpam())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "#### Relative and absolute imports\n",
+    "\n",
+    "If you need to reference something in module 1 from module 3 you can use an absolute import\n",
+    "\n",
+    "module3.py\n",
+    "```python\n",
+    "from final_package.sub_package1.module1 import eggs\n",
+    "def more_eggs():\n",
+    "    print('[module3] more_eggs()')\n",
+    "\n",
+    "class BigEgg:\n",
+    "    pass\n",
+    "\n",
+    "def less_eggs():\n",
+    "    eggs()\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[module1] eggs()\n"
+     ]
+    }
+   ],
+   "source": [
+    "from final_package.sub_package2.module3 import less_eggs\n",
+    "\n",
+    "less_eggs()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "You can also use relative imports to do the same thing, this time we reference module 2 from module 4\n",
+    "\n",
+    "module4.py\n",
+    "```python\n",
+    "from ..sub_package1.module2 import spam\n",
+    "def more_spam():\n",
+    "    print('[module4] more_spam()')\n",
+    "\n",
+    "class CanOSpam:\n",
+    "    pass\n",
+    "\n",
+    "def one_spam():\n",
+    "    spam()\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[module2] spam()\n"
+     ]
+    }
+   ],
+   "source": [
+    "from final_package.sub_package2 import module4\n",
+    "\n",
+    "module4.one_spam()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "### Creating your own package\n",
+    "\n",
+    "\n",
+    "So, the first thing to do when you want to make your own package is more likely than not come up with a name for it. \n",
+    "\n",
+    "This is not in the interests of vanity, but you're going to have to name the repository after it and some of the directories, so you should probably come up with it first. \n",
+    "\n",
+    "There are a few things to consider though, python module/package names should generally follow the following constraints:\n",
+    "\n",
+    "* All lowercase\n",
+    "* Unique on pypi, even if you don’t want to make your package publicly available (you might want to specify it privately as a dependency later)\n",
+    "* Unique on internal repos (artifactory)\n",
+    "* Underscore-separated or no word separators at all (don’t use hyphens)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "The next thing your probably going to do is to set out your directory structure. Here is an example of the CMDB library we looked at in a previous lesson:\n",
+    "\n",
+    "```bash\n",
+    "essentials_cmdb\n",
+    "├── CHANGELOG.md\n",
+    "├── README.md\n",
+    "├── credentials.example\n",
+    "├── essentials_cmdb\n",
+    "│   ├── __init__.py\n",
+    "│   ├── core.py\n",
+    "│   ├── genders.py\n",
+    "│   ├── hosts.py\n",
+    "│   └── i2csshrc.py\n",
+    "```\n",
+    "```bash\n",
+    "├── other\n",
+    "│   ├── make_defs.sh\n",
+    "│   └── resources.py\n",
+    "├── releaseNotes.sh\n",
+    "├── requirements.txt\n",
+    "├── setup.py\n",
+    "├── tests\n",
+    "│   └── test_core.py\n",
+    "└── tools\n",
+    "    ├── README.md\n",
+    "    ├── change_roles.py\n",
+    "    ├── cmdb-gen-localfiles.py\n",
+    "    ├── cmdb-tk-requirements.txt\n",
+    "    └── cmdb-tk.py\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "source": [
+    "This example is probably overkill, but lets have a quick look at it\n",
+    "\n",
+    "* The top level `essentials_cmdb` is the root of our git repo\n",
+    "* It has a subdir `essentials_cmdb` which is the actual python module.\n",
+    "* The README is in the top level\n",
+    "* The requirements are in the top level\n",
+    "* It has separate tools, tests and other directories."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
+   "source": [
+    "So lets say we wanted the least amount of setup we could get away with. We only have one file that we want to publish. We could have\n",
+    "\n",
+    "```bash\n",
+    "my_project\n",
+    "├── my_project\n",
+    "│   ├── __init__.py\n",
+    "│   └── cmdb.py\n",
+    "└── setup.py\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "Now we have our layout, we need a way to tell python how to install the package. This is done using the setup.py. Here's a simple one we could use to install the above package:\n",
+    "\n",
+    "```python\n",
+    "from setuptools import setup\n",
+    "\n",
+    "setup(name='my_project',\n",
+    "      version='0.1',\n",
+    "      description='The best project ever',\n",
+    "      url='http://github.com/fakeuser/my_project',\n",
+    "      author='Mr. Bean',\n",
+    "      author_email='doc@who.com',\n",
+    "      license='MIT',\n",
+    "      packages=['my_project'],\n",
+    "      zip_safe=False)\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "source": [
+    "Now you should be able to install it to your system with\n",
+    "\n",
+    "```bash\n",
+    "pip install .\n",
+    "```\n",
+    "\n",
+    "or as I mentioned in the last lesson, you can install it in editable mode. (creates symlinks so you can still edit the installed version)\n",
+    "\n",
+    "```bash\n",
+    "pip install -e .\n",
+    "```\n",
+    "\n",
+    "You should probaly be installing these in a virtual environment at this stage. You're going to iterate over the install of this package a lot. If it's done inside a virtual env, you can easily delete the dir and not leave a lot of mess lying around you OS. "
    ]
   }
  ],
@@ -587,7 +1117,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.6.5"
+   "version": "3.6.7"
   }
  },
  "nbformat": 4,
