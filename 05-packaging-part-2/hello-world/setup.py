@@ -6,6 +6,5 @@ setup(name='hello_world',
       url='git@github.com:BelfastTechTraining/python.git',
       author='Matt Mulhern',
       author_email='mattmulhern01@gmail.com',
-      license='MIT',
       packages=['hello_world'],
       zip_safe=False)
