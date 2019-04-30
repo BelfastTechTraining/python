@@ -1,0 +1,1 @@
+from hello_world import main  # makes hello_world.main accessible
