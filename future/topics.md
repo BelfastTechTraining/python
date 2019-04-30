@@ -9,7 +9,11 @@
 * CMDB - cmdb-python-api
 * Packaging / artifactory
 * PEP8 / Style / Best practices / linting
-* Python 3 features - dataclasses / f strings
+* Python 3 features 
+  * dataclasses
+  * asyncio
+  * fstrings
+  * type hints
 * asyncio
 * flask
 * django
