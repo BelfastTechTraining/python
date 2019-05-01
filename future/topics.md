@@ -1,27 +1,41 @@
-* pandas
-* matplotlib
-* numpy
-* scipy
+IDEAS
 * jupyter
 * AWS - boto
 * AWS - troposphere / cloudformation
 * AWS - terraform
-* CMDB - cmdb-python-api
-* Packaging / artifactory
-* PEP8 / Style / Best practices / linting
-* Python 3 features 
+* Python 3 features
   * dataclasses
   * asyncio
   * fstrings
   * type hints
 * asyncio
-* flask
-* django
+* "Writing a pythonic wrapper"
+* Working with text files - log processing and parsing
+* Command line interfaces - docopt, argparse, click
+* sphinx
+* DS for dummies?
+* matplotlib
+* numpy
+* scipy
+
+TODO
 * pytest
+** best practices
+** fixtures
+** setup / teardown
+** coverage
+** running from setup.py
+* fabric
+* pandas
+* requests
+* Working with REST APIs
+* flask
+
+DONE
 * Writing libraries / modules
 * Python 2 -> python 3
-* Working with text files - log processing and parsing
 * Work flows - working with git
-* Command line interfaces - docopt, argparse, click
-* Working with REST APIs
 * Structuring modules and packages
+* PEP8 / Style / Best practices / linting
+* CMDB - cmdb-python-api
+* Packaging / artifactory
