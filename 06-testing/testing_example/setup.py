@@ -7,4 +7,7 @@ setup(name='testing_example',
       author='Matt Mulhern',
       author_email='mattmulhern01@gmail.com',
       packages=['testing_example'],
-      zip_safe=False)
+      zip_safe=False,
+      setup_requires=['pytest-runner'],
+      tests_require=['pytest']
+      )
