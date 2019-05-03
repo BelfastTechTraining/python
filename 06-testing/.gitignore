@@ -1,0 +1,4 @@
+venv
+hello-world/build
+hello-world/dist
+hello-world/hello_world.egg-info
