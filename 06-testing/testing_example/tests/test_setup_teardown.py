@@ -7,6 +7,6 @@ def setup_module(self):
 def teardown_module(self):
     print("\nMODULE_TEARDOWN")
 
-def test_can_vote():
+def test_something():
     assert 2*3 == 6
 
