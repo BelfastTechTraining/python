@@ -1,5 +1,4 @@
 import pytest
-from testing_example import Person
 
 def setup_module(self):
     print("\nMODULE SETUP")
