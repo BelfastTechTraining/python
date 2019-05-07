@@ -19,12 +19,6 @@ IDEAS
 * scipy
 
 TODO
-* pytest
-** best practices
-** fixtures
-** setup / teardown
-** coverage
-** running from setup.py
 * fabric
 * pandas
 * requests
@@ -39,3 +33,4 @@ DONE
 * PEP8 / Style / Best practices / linting
 * CMDB - cmdb-python-api
 * Packaging / artifactory
+* pytest
